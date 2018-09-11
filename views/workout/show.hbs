@@ -1,0 +1,63 @@
+<section class="row">
+
+    <div class="workout">
+        {{#each WODs}}
+        <img src='{{ image }}' alt='{{ name }}' class="wod-pics">
+        <h1>{{ content }}</h1>
+        <h2>{{ rounds }}</h2>
+        <h2>{{ movement1 }}</h2>
+        <h2>{{ movement2 }}</h2>
+        <h2>{{ movement3 }}</h2>
+        <h2> {{ movement4 }}</h2>
+        <h2> {{ movement5}} </h2>
+        <h2> {{ movement6 }} </h2>
+        <h2> {{ movement7 }} </h2>
+        <h2>{{comments}}</h2>
+
+        {{/each}} {{#if comments.length}} {{#each comment}}
+
+        <span>
+            {{comment.length}}
+        </span>
+        {{/each}} {{/if}}
+        <form action="/workout/{{WODs.id}}" method="POST" class="workout-form">
+            <div class="user-show-button-wrapper d-flex flex-column">
+                <div class="user-comment">
+                    <textarea name="comment" cols="40" rows="5" placeholder="Message"></textarea>
+                    <input class="btn btn-outline-info" type="submit" />
+                </div>
+                <p class="card">
+                    <div class="card">
+                        <div class="card-content">
+                            <a class="card-title" href="/workout/{{WODs.id}}">
+                                {{ content }}
+                            </a>
+                        </div>
+                        <div class="card-action">
+                            <a href="/workout/{{ WODs.id }}" class=""></a>
+                            <span class="workout_comments">{{ comments.length }} </span>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </form>
+        <form action="/workout/{{WODs.id}}" method="DELETE" class="auth-form">
+            <div class="user-show-button-wrapper d-flex flex-column">
+                <div class="user-comment-delete">
+                    <input class="btn btn-outline-info" type="submit" value="Delete Comment" />
+                </div>
+            </div>
+        </form>
+        <form action="/workout/{{WODs.id}}" method="PUT" class="auth-form">
+            <div class="user-show-button-wrapper d-flex flex-column">
+                <div class="user-comment-update">
+                    <input class="btn btn-outline-info" type="submit" value="Update Comment" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+{{!-- page for individual workouts --}}

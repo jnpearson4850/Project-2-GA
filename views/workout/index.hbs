@@ -1,0 +1,14 @@
+ {{#each WODs}}
+<div class="wods">
+
+    <form action="/workout/{{id}}" method="get" class="auth-form">
+
+        <img src='{{ image }}' alt='{{ name }}' class="wod-pics">
+        <p class="input-field">
+            <input type="submit" value="DO IT!" class="button">
+        </p>
+    </form>
+
+</div>
+
+{{/each}} {{!-- workout landing page with images to click on --}}
