@@ -44,7 +44,7 @@ module.exports = {
             })
     },
     delete: (req, res) => {
-        WODs.findOneAndRemove({ _id: req.body.id })
+        WODs.findOneAndRemove({ _id: req.params.id })
             .then(WODs => {
                 res.redirect("/")
             })

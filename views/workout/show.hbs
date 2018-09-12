@@ -1,5 +1,4 @@
 <section class="row">
-
     <div class="workout">
         {{#each WODs}}
         <img src='{{ image }}' alt='{{ name }}' class="wod-pics">
@@ -14,17 +13,13 @@
         <h2> {{ movement7 }} </h2>
         {{#each comments}}
         <h2> {{ commentText }}</h2>
-
+        <form action="/workout/{{WODs.id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
+        </form>
         {{/each}} {{/each}}
-
         <form action="/workout/{{WODs.id}}" method="POST" class="workout-form">
             <textarea name="commentText" cols="40" rows="5" placeholder="Message"></textarea>
             <input class="btn btn-outline-info" type="submit" />
         </form>
-
-
     </div>
-
 </section>
-
-{{!-- page for individual workouts --}}
