@@ -9,7 +9,9 @@ app.set("view engine", "hbs") //unsure
 app.set('views', __dirname + '/views') //unsure
 app.use(express.static("public")) //unsure
 app.use(methodOverride("_method")); //good
-app.use(parser.json()) //good
+app.use(parser.urlencoded({
+    extended: true
+}))//good
 // app.use(mongoose("_mongoose"))
 
 // use.require routes here

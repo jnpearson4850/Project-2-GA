@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 
 
 const Comment = new Schema({
-    comment: String
+    commentText: String
 })
 
 const WODs = new Schema({

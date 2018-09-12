@@ -25,10 +25,8 @@ module.exports = {
             })
     },
     create: (req, res) => {
-        let newComment = req.body.comment
         Comment.create({
-            comment: newComment
-            // WODs: req.params.id
+            commentText: req.body.commentText
         }).then(comment => {
             WODs.findOneAndUpdate({ _id: req.params.id }).then(WOD => {
                 WOD.comments.push(comment)
@@ -50,12 +48,6 @@ module.exports = {
             .then(WODs => {
                 res.redirect("/")
             })
-
-
-        // WODs.findByIdAndRemove(req.body, function (err, post) {
-        //     if (err) return next(err);
-        //     res.json(comment);
-        // })
     }
 }
 
