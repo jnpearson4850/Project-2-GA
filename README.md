@@ -2,7 +2,7 @@
 # Project Fitness Generator.
 
 Link to the live Page- https://fitnessgenappjosh.herokuapp.com/
-** Best viewed with page at full scale **
+
 
 **Description**
 
