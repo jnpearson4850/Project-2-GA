@@ -8,7 +8,9 @@
             <input type="submit" value="DO IT!" class="button">
         </p>
     </form>
-
+    <form action="/workout/{{id}}?_method=DELETE" method="POST">
+        <button type="submit" name="Delete">Delete</button>
+    </form>
 </div>
 
 {{/each}} {{!-- workout landing page with images to click on --}}

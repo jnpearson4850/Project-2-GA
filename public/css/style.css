@@ -110,11 +110,14 @@ p {
     display: inline-flex;
     flex-direction: column;
     padding: 10px 10px;
-    border: 3px solid red;
+    box-shadow: 10px 10px 52px 0px rgba(255,255,255,1);
+ border-radius: 10%;
+    /* border: 5px solid red; */
     text-align: center;
 }
 .wod-pics {
     max-height: 200px;
+    max-width: 300px;
     border-radius: 25%;
 }
 /* .button {
